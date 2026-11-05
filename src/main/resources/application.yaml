@@ -1,0 +1,22 @@
+server:
+  port: 9001
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - metrics
+          - prometheus
+spring:
+  application:
+    name: spring-observability
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+  jpa:
+    defer-datasource-initialization: true
